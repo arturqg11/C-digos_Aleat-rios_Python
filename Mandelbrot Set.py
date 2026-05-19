@@ -12,7 +12,7 @@ def mandelbrot(c, iter):
 
 def mandebrotSet(xmin, xmax, ymin, ymax, width, height, iter):
     x = np.linspace(xmin, xmax, width)
-    y = np.linspace(ymin, ymax, width)
+    y = np.linspace(ymin, ymax, height)
 
     mset = np.zeros((height, width))
 
@@ -24,12 +24,12 @@ def mandebrotSet(xmin, xmax, ymin, ymax, width, height, iter):
     return mset
 
 ## valores para o set inteiro:  xmin, xmax, ymin, ymax = -2.0, 1.0, -1.5, 1.5
-xmin, xmax, ymin, ymax = -2.0, 1.0, -1.5, 1.5
+xmin, xmax, ymin, ymax = -2.0, 1.0, -1.5, 1.5  #alterarando estes valores ajustamos o zoom
 width, height = 1000, 1000
-iter = 100
+iter = 100  #eventualmente pode servir para melhorar a resolução
 
 imagemMandelbrot = mandebrotSet(xmin, xmax, ymin, ymax, width, height, iter)
 
-plt.imshow(imagemMandelbrot, extent = [xmin, xmax, ymin, ymax], cmap="hot")
+plt.imshow(imagemMandelbrot, extent = [xmin, xmax, ymin, ymax], cmap="hot", aspect="equal")
 plt.colorbar()
 plt.show()
