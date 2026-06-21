@@ -1,9 +1,6 @@
-import numpy as np
-import math as mt
-s = 0
+import sympy as sp
 
-for c in range(1, 5):
-    p = 3/c
-    s += p
+x = sp.symbols("x")
+Fx = (((2*x+3)/(5*x+4))/((2)/(5)))**x
 
-print(s)
+print(sp.limit(Fx, x, "oo"))
